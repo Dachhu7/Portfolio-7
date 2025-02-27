@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darshan Kudache</title>
+    <link rel="stylesheet" href="nav1.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="script.js" defer></script>
+    <script src="js/extra.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("qMlqtUZMSGajP-RE6"); // Your EmailJS Public Key
+        })();
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* ====== Success Dialog Box ====== */
+        .dialog-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #222;
+            color: #fff;
+            padding: 1.5em 2em;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 224, 255, 0.8);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .dialog-box p {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+        }
+
+        .dialog-box button {
+            background: #00e0ff;
+            color: #222;
+            border: none;
+            padding: 0.5em 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: 0.3s;
+        }
+
+        .dialog-box button:hover {
+            background: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-left">
+            <img src="assets/logo.png" alt="Logo">
+        </div>
+        <div class="nav-right">
+            <div class="nav-toggle">&#9776;</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <script>
+        document.querySelector(".nav-toggle").addEventListener("click", function() {
+            document.querySelector(".nav-right ul").classList.toggle("show");
+        });
+    </script>
+
+    <section>
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h3>Send a Message</h3>
+            <form id="contact-form">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="form-status"></p>
+        </div>
+    </section>
+
+    <!-- ====== Success Dialog Box ====== -->
+    <div id="success-dialog" class="dialog-box">
+        <p>✅ Your message has been sent successfully!</p>
+        <button onclick="closeDialog()">OK</button>
+    </div>
+
+    <!-- ====== Footer Section ====== -->
+    <footer class="footer">
+        <div class="container">
+            <h2 class="footer-title">Stay Connected</h2>
+            <div class="social-links">
+                <a href="mailto:kbdarshan0007@gmail.com" class="social-icon" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+919533539679" class="social-icon" title="Call">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/darshan-kudache-a4369328b" class="social-icon" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Dachhu7" class="social-icon" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://twitter.com/yourtwitter" class="social-icon" target="_blank" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/yourinstagram" class="social-icon" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <p class="footer-text">&copy; 2024 Darshan Kudache. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

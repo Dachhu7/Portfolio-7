@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darshan Kudache</title>
+    <link rel="stylesheet" href="nav1.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="script.js" defer></script>
+    <script src="js/extra.js" defer></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="nav-left">
+            <img src="assets/logo.png" alt="Logo">
+        </div>
+        <div class="nav-right">
+            <div class="nav-toggle">&#9776;</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    
+
+    <script>
+        document.querySelector(".nav-toggle").addEventListener("click", function() {
+            document.querySelector(".nav-right ul").classList.toggle("show");
+        });
+    </script>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                
+                <!-- Soft Skills -->
+                <div class="skill">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Analytical & Critical Thinking</li>
+                        <li>Problem-Solving & Debugging</li>
+                        <li>Leadership & Team Collaboration</li>
+                        <li>Adaptability & Quick Learning</li>
+                        <li>Time Management & Productivity</li>
+                    </ul>
+                </div>
+
+                <!-- Technical Skills -->
+                <div class="skill">
+                    <h3>Technical Skills</h3>
+                    <ul>
+                        <li>Python, Bash, JavaScript</li>
+                        <li>HTML, CSS, Bootstrap</li>
+                        <li>Flask, FastAPI, REST API Development</li>
+                        <li>MySQL, PostgreSQL, NoSQL (MongoDB)</li>
+                        <li>Linux System Administration</li>
+                        <li>Cloud Computing (AWS, GCP, Azure)</li>
+                        <li>Cybersecurity & Vulnerability Assessment</li>
+                    </ul>
+                </div>
+
+                <!-- Key Strengths -->
+                <div class="skill">
+                    <h3>Key Strengths</h3>
+                    <ul>
+                        <li>System Scalability & Performance Optimization</li>
+                        <li>Software Installation & Configuration</li>
+                        <li>Debugging & Troubleshooting</li>
+                        <li>Database Optimization & Query Performance</li>
+                        <li>Data Structures & Algorithms</li>
+                        <li>Software Development Life Cycle (SDLC)</li>
+                        <li>Web Application Security (OWASP, ZAP, Burp Suite)</li>
+                    </ul>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <div class="skill">
+                    <h3>Tools & Technologies</h3>
+                    <ul>
+                        <li>Git, GitHub, GitLab (Version Control)</li>
+                        <li>Docker & Containerization</li>
+                        <li>Kubernetes (Basic Deployment Knowledge)</li>
+                        <li>CI/CD with GitHub Actions, Jenkins</li>
+                        <li>Infrastructure as Code (Terraform, Ansible)</li>
+                        <li>Logging & Monitoring (Prometheus, Grafana, ELK Stack)</li>
+                    </ul>
+                </div>
+
+                <!-- Industry Practices -->
+                <div class="skill">
+                    <h3>Industry Practices</h3>
+                    <ul>
+                        <li>Incident Management & Root Cause Analysis</li>
+                        <li>Automated Testing (Unit & Integration)</li>
+                        <li>Server Hardening & Security Compliance</li>
+                        <li>Cloud Cost Optimization & Resource Management</li>
+                        <li>Disaster Recovery & Backup Strategies</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>    
+    <!-- ====== Footer Section ====== -->
+    <footer class="footer">
+        <div class="container">
+            <h2 class="footer-title">Stay Connected</h2>
+            <div class="social-links">
+                <a href="mailto:kbdarshan0007@gmail.com" class="social-icon" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+919533539679" class="social-icon" title="Call">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/darshan-kudache-a4369328b" class="social-icon" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Dachhu7" class="social-icon" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://twitter.com/yourtwitter" class="social-icon" target="_blank" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/yourinstagram" class="social-icon" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <p class="footer-text">&copy; 2024 Darshan Kudache. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

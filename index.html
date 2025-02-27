@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darshan Kudache</title>
+    <link rel="stylesheet" href="nav1.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="script.js" defer></script>
+    <script src="js/extra.js" defer></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="nav-left">
+            <img src="assets/logo.png" alt="Logo">
+        </div>
+        <div class="nav-right">
+            <div class="nav-toggle">&#9776;</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    
+
+    <script>
+        document.querySelector(".nav-toggle").addEventListener("click", function() {
+            document.querySelector(".nav-right ul").classList.toggle("show");
+        });
+    </script>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home">
+            <div class="container1">
+                <div class="hero-content">
+                    <h1>Welcome to My Digital Space!</h1>
+                    <h2>I'm Darshan Kudache</h2>
+                    <h3>And I'm a <span class="typing-text"></span></h3>
+
+                    <div class="my">
+                        <p>
+                            <b>A passionate and results-driven <strong>Junior IT Administrator</strong> with expertise in system optimization and a strong enthusiasm for cybersecurity. I specialize in <strong>enhancing IT infrastructures</strong> and ensuring robust security measures.</b>
+                        </p>
+                        <div class="info-section">
+                            <div class="info-box">
+                                <p><b>✅ Latest Interests:</b> Website Development, AI-driven development, cloud security, and ethical hacking.</p>
+                            </div>
+                            <div class="info-box">
+                                <p><b>📌 My Work:</b> Developed a <strong>Responsive Restaurant Website</strong> and contributed to the <strong>Techplement Internship</strong> as a Python Developer Intern.</p>
+                            </div>
+                            <div class="info-box">
+                                <p><b>⭐ Strengths:</b> Problem-solving, data structures, object-oriented programming, and modern web technologies.</p>
+                            </div>
+                        </div>                
+                    </div>
+
+                    <!-- Call to Action -->
+                    <div class="cta">
+                        <a href="https://github.com/Dachhu7" class="btn-primary">View My Work</a>
+                        <a href="contact.html" class="btn-secondary">Let's Connect</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-home-container">
+                <h2>About Me</h2>
+                <p>Hello! I'm <b>Darshan Kudache</b>, a tech enthusiast skilled in <b>Python (Flask), SQL, Web Development, and Cybersecurity.</b> Passionate about problem-solving, system reliability, and ethical hacking.</p>
+                <p>Currently exploring <b>Site Reliability Engineering (SRE) and Cybersecurity</b> while working on real-world projects.</p>
+                <a href="about.html" class="btn">Read More</a>
+            </div>
+            <section>
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form id="contact-form">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                    <p id="form-status"></p>
+                </div>
+            </section>
+        
+            <!-- ====== Success Dialog Box ====== -->
+            <div id="success-dialog" class="dialog-box">
+                <p>✅ Your message has been sent successfully!</p>
+                <button onclick="closeDialog()">OK</button>
+            </div>
+
+                <!-- Social Links -->
+                <div class="social-icons">
+                    <a href="https://github.com/Dachhu7" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/darshan-kudache-a4369328b/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </section>
+    </main>
+    <!-- ====== Footer Section ====== -->
+    <footer class="footer">
+        <div class="container">
+            <h2 class="footer-title">Stay Connected</h2>
+            <div class="social-links">
+                <a href="mailto:kbdarshan0007@gmail.com" class="social-icon" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+919533539679" class="social-icon" title="Call">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/darshan-kudache-a4369328b" class="social-icon" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Dachhu7" class="social-icon" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://twitter.com/yourtwitter" class="social-icon" target="_blank" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/yourinstagram" class="social-icon" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <p class="footer-text">&copy; 2024 Darshan Kudache. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
