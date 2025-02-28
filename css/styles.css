@@ -813,6 +813,7 @@ header {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    margin-top: 1em;
 }
 
 /* Hover Animation */
