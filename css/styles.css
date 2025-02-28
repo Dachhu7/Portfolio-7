@@ -331,19 +331,11 @@ header {
 }
 
 /* About Container */
-#about .container1 {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2.5em;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
-    opacity: 0;
-    transform: translateY(30px);
-    /* Use renamed animation to avoid conflict */
-    animation: fadeInUp2 1s ease-in-out forwards;
+#about {
+    margin-top: 0;
+    padding-top: 0;
 }
+
 
 /* Section Titles */
 #about h2 {
@@ -351,7 +343,9 @@ header {
     color: #373737;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 0 0 10px #00E5FF;
+    text-shadow: 0 0 5px #00E5FF;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 /* Name Heading */
@@ -360,6 +354,8 @@ header {
     color: #FF4081;
     font-weight: bold;
     text-shadow: 0 0 10px rgba(255, 64, 129, 0.8);
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 /* Description Text */
@@ -387,31 +383,89 @@ header {
     text-shadow: 0 0 10px #00E5FF;
 }
 
-/* Highlights Box */
-.highlight1 {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 2em;
+/* Highlights Section */
+.highlights-container {
+    text-align: center;
+    margin: 50px 20px;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2em;
+    color: #00e5ff;
+    text-shadow: 0 0 15px rgba(0, 229, 255, 0.8);
+    margin-bottom: 30px;
+}
+
+/* Grid Layout */
+.highlight-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px; /* Adds spacing between cards */
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Individual Highlight Card */
+.highlight-card {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 0 12px rgba(0, 229, 255, 0.3);
-    margin-top: 2em;
-    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 229, 255, 0.4);
+    text-align: center;
+    width: 90%;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.highlight1:hover {
+.highlight-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 229, 255, 0.7);
 }
 
-/* Highlighted Text */
-.highlight1 ul li {
-    font-size: 1.2em;
-    line-height: 1.8;
-}
-
-.highlight1 ul li b {
+/* Icons */
+.highlight-card i {
+    font-size: 2.2em;
     color: #FFD700;
-    font-size: 1.3em;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+    margin-bottom: 12px;
+}
+
+/* Card Text */
+.highlight-card h3 {
+    font-size: 1.4em;
+    color: #00e5ff;
+    margin-bottom: 10px;
+}
+
+.highlight-card p {
+    font-size: 1em;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.8em;
+    }
+
+    .highlight-grid {
+        gap: 20px; /* Slightly reduce space between cards */
+    }
+
+    .highlight-card {
+        width: 95%;
+        padding: 18px;
+    }
+
+    .highlight-card h3 {
+        font-size: 1.3em;
+    }
+
+    .highlight-card p {
+        font-size: 0.95em;
+    }
 }
 
 /* Education Section */
