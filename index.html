@@ -4,348 +4,176 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Darshan Kudache – Full Stack Developer</title>
-<!--   <link rel="stylesheet" href="nav1.css" />
-  <link rel="stylesheet" href="css/styles.css" /> -->
+
   <script src="script.js" defer></script>
   <script src="js/extra.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
   <style>
-    /* Reset and Base Styles */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    /* Reset & Base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
 
-html {
-  scroll-behavior: smooth;
-}
+    /* Header & Navbar */
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 2rem; background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: sticky; top: 0; z-index: 1000;
+    }
+    .nav-left img { height: 50px; }
+    .nav-right ul { display: flex; gap: 1.5rem; }
+    .nav-right ul li a {
+      padding: 0.5rem 0.75rem; border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .nav-right ul li a:hover { background: #eaeaea; }
+    .nav-toggle {
+      display: none; font-size: 1.8rem; cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .nav-right ul {
+        display: none; flex-direction: column; background: #fff;
+        position: absolute; top: 70px; right: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        padding: 1rem; border-radius: 8px;
+      }
+      .nav-right ul.show { display: flex; }
+      .nav-toggle { display: block; }
+    }
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  background-color: #f9f9f9;
-  color: #333;
-  overflow-x: hidden;
-}
+    /* Hero Section */
+    #home {
+      background: linear-gradient(135deg, #224abe, #6c63ff);
+      color: #fff; text-align: center;
+      padding: 5rem 2rem;
+    }
+    #home h1 { font-size: 2rem; margin-bottom: 1rem; }
+    #home h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    #home h3 { font-size: 1.1rem; margin-bottom: 1.5rem; font-weight: 400; }
+    #home p {
+      max-width: 600px; margin: 0 auto 2rem;
+      font-size: 1rem; opacity: 0.95;
+    }
+    .cta {
+      display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
+    }
+    .btn-primary, .btn-secondary {
+      padding: 0.7rem 1.3rem; border-radius: 6px; font-weight: 500;
+      cursor: pointer; transition: background 0.3s, transform 0.2s;
+      text-align: center; display: inline-block;
+    }
+    .btn-primary { background: #fff; color: #224abe; }
+    .btn-primary:hover { background: #f0f0f0; transform: translateY(-2px); }
+    .btn-secondary {
+      border: 2px solid #fff; color: #fff; background: transparent;
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+    }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+    /* Services */
+    #services {
+      background: #fff; text-align: center; padding: 4rem 2rem;
+    }
+    #services h2 { font-size: 1.8rem; color: #224abe; margin-bottom: 1.5rem; }
+    #services ul {
+      max-width: 500px; margin: 0 auto; text-align: left;
+    }
+    #services ul li {
+      padding: 0.5rem 0; font-size: 1.05rem;
+    }
 
-ul {
-  list-style: none;
-}
+    /* Projects */
+    #projects {
+      background: #f0f4ff; text-align: center; padding: 4rem 2rem;
+    }
+    #projects h2 { font-size: 1.8rem; color: #224abe; margin-bottom: 2rem; }
+    .info-section {
+      display: grid; gap: 1.5rem;
+      max-width: 800px; margin: 0 auto;
+    }
+    .info-box {
+      background: #fff; padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+      text-align: left;
+    }
+    .info-box:hover { transform: translateY(-5px); }
+    .info-box p { font-size: 1rem; line-height: 1.5; }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+    /* Contact */
+    #contact {
+      background: #fff; text-align: center; padding: 4rem 2rem;
+    }
+    .contact-form {
+      max-width: 500px; margin: 0 auto;
+    }
+    .contact-form h2 {
+      font-size: 1.8rem; color: #224abe; margin-bottom: 1rem;
+    }
+    .contact-form p { margin-bottom: 1.5rem; font-size: 1rem; }
+    .contact-form form {
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 0.7rem; border-radius: 6px; border: 1px solid #ccc;
+      font-size: 1rem; width: 100%;
+    }
+    .contact-form button {
+      background: #224abe; color: #fff;
+      border: none; padding: 0.75rem;
+      border-radius: 6px; font-size: 1rem;
+      cursor: pointer; transition: background 0.3s;
+    }
+    .contact-form button:hover { background: #1a3793; }
+    .dialog-box {
+      display: none; padding: 1rem; background: #d4edda;
+      color: #155724; border-radius: 6px; margin-top: 1rem;
+    }
+    .social-icons {
+      margin-top: 2rem; display: flex;
+      justify-content: center; gap: 1rem;
+    }
+    .social-icons a {
+      font-size: 1.5rem; color: #224abe;
+      transition: color 0.3s, transform 0.2s;
+    }
+    .social-icons a:hover {
+      color: #1a3793; transform: translateY(-3px);
+    }
 
-/* Header and Navbar */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.nav-left img {
-  height: 50px;
-}
-
-.nav-right ul {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-right ul li a {
-  padding: 0.5rem 0.75rem;
-  border-radius: 6px;
-  transition: background 0.3s;
-}
-
-.nav-right ul li a:hover {
-  background: #e0e0e0;
-}
-
-.nav-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .nav-right ul {
-    display: none;
-    flex-direction: column;
-    background: #ffffff;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    padding: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
-  .nav-right ul.show {
-    display: flex;
-  }
-  .nav-toggle {
-    display: block;
-  }
-}
-
-/* Hero Section */
-#home {
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #224abe, #6c63ff);
-  color: #ffffff;
-  text-align: center;
-}
-
-#home h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-#home h2 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
-#home h3 {
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin-bottom: 1.5rem;
-}
-
-#home p {
-  max-width: 600px;
-  margin: 0 auto 2rem;
-}
-
-.cta {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.btn-primary,
-.btn-secondary {
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
-}
-
-.btn-primary {
-  background: #ffffff;
-  color: #224abe;
-}
-
-.btn-primary:hover {
-  background: #f0f0f0;
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background: transparent;
-  border: 2px solid #ffffff;
-  color: #ffffff;
-}
-
-.btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
-}
-
-/* Services Section */
-#services {
-  padding: 4rem 2rem;
-  background: #ffffff;
-  text-align: center;
-}
-
-#services h2 {
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
-  color: #224abe;
-}
-
-#services ul {
-  max-width: 500px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-#services ul li {
-  padding: 0.5rem 0;
-  font-size: 1.1rem;
-}
-
-/* Projects Section */
-#projects {
-  padding: 4rem 2rem;
-  background: #f0f4ff;
-  text-align: center;
-}
-
-#projects h2 {
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
-  color: #224abe;
-}
-
-.info-section {
-  display: grid;
-  gap: 1.5rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.info-box {
-  background: #ffffff;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  text-align: left;
-  transition: transform 0.3s;
-}
-
-.info-box:hover {
-  transform: translateY(-5px);
-}
-
-.info-box p {
-  font-size: 1rem;
-}
-
-/* Contact Section */
-#contact {
-  padding: 4rem 2rem;
-  background: #ffffff;
-  text-align: center;
-}
-
-.contact-form {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.contact-form h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #224abe;
-}
-
-.contact-form p {
-  margin-bottom: 1.5rem;
-}
-
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 0.75rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  width: 100%;
-}
-
-.contact-form button {
-  background: #224abe;
-  color: #ffffff;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.contact-form button:hover {
-  background: #1a3793;
-}
-
-.dialog-box {
-  display: none;
-  padding: 1rem;
-  background: #d4edda;
-  color: #155724;
-  border-radius: 6px;
-  margin-top: 1rem;
-}
-
-.social-icons {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.social-icons a {
-  font-size: 1.5rem;
-  color: #224abe;
-  transition: color 0.3s;
-}
-
-.social-icons a:hover {
-  color: #1a3793;
-}
-
-/* Footer Section */
-.footer {
-  background: #224abe;
-  color: #ffffff;
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-.footer-title {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.social-icon {
-  font-size: 1.4rem;
-  color: #ffffff;
-  transition: color 0.3s, transform 0.2s;
-}
-
-.social-icon:hover {
-  color: #dddddd;
-  transform: translateY(-3px);
-}
-
-.footer-text {
-  font-size: 0.9rem;
-}
-
+    /* Footer */
+    .footer {
+      background: #224abe; color: #fff;
+      text-align: center; padding: 2rem 1rem;
+    }
+    .footer-title { font-size: 1.5rem; margin-bottom: 1rem; }
+    .social-links {
+      display: flex; justify-content: center;
+      gap: 1rem; margin-bottom: 1rem;
+    }
+    .social-icon {
+      font-size: 1.4rem; color: #fff;
+      transition: color 0.3s, transform 0.2s;
+    }
+    .social-icon:hover {
+      color: #ddd; transform: translateY(-3px);
+    }
+    .footer-text { font-size: 0.9rem; }
   </style>
 </head>
 
@@ -372,22 +200,17 @@ header {
   </script>
 
   <main>
+    <!-- HERO -->
     <section id="home">
-      <div class="container1">
-        <div class="hero-content">
-          <h1>High-Performance Web Development for Startups</h1>
-          <h2>I'm Darshan Kudache</h2>
-          <h3>I help founders build fast, secure MVPs using React & Django</h3>
-
-          <p>
-            I specialize in building full-stack web platforms with clean code, modern security, and scalable backend systems. From MVPs to admin panels — I help startups launch products in under 7 days.
-          </p>
-
-          <div class="cta">
-            <a href="#projects" class="btn-primary">See My Work</a>
-            <a href="#contact" class="btn-secondary">Hire Me</a>
-          </div>
-        </div>
+      <h1>High-Performance Web Development for Startups</h1>
+      <h2>I'm Darshan Kudache</h2>
+      <h3>I help founders build fast, secure MVPs using React & Django</h3>
+      <p>
+        I specialize in building full-stack web platforms with clean code, modern security, and scalable backend systems. From MVPs to admin panels — I help startups launch products in under 7 days.
+      </p>
+      <div class="cta">
+        <a href="#projects" class="btn-primary">See My Work</a>
+        <a href="#contact" class="btn-secondary">Hire Me</a>
       </div>
     </section>
 
@@ -432,12 +255,10 @@ header {
         </form>
         <p id="form-status"></p>
       </div>
-
       <div id="success-dialog" class="dialog-box">
         <p>✅ Your message has been sent successfully!</p>
         <button onclick="closeDialog()">OK</button>
       </div>
-
       <div class="social-icons">
         <a href="https://github.com/Dachhu7" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/in/darshan-kudache-a4369328b/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -451,12 +272,12 @@ header {
     <div class="container">
       <h2 class="footer-title">Stay Connected</h2>
       <div class="social-links">
-        <a href="mailto:kbdarshan0007@gmail.com" class="social-icon" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="tel:+919533539679" class="social-icon" title="Call"><i class="fas fa-phone-alt"></i></a>
-        <a href="https://www.linkedin.com/in/darshan-kudache-a4369328b" class="social-icon" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/Dachhu7" class="social-icon" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://twitter.com/yourtwitter" class="social-icon" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com/dachhu_jain__7" class="social-icon" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:kbdarshan0007@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+        <a href="tel:+919533539679" class="social-icon"><i class="fas fa-phone-alt"></i></a>
+        <a href="https://www.linkedin.com/in/darshan-kudache-a4369328b" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Dachhu7" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/yourtwitter" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/dachhu_jain__7" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
       <p class="footer-text">&copy; 2024 Darshan Kudache. All rights reserved.</p>
     </div>
